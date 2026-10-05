@@ -1,89 +1,116 @@
-# 📊 DataPilot Analytics — Intelligent Data Analytics & AI Insights Platform
+# 📊 DataPilot Analytics
 
-**Upload data. Discover insights. Predict the future.**
+**Transform raw data into actionable business intelligence.**
 
-An AI-powered analytics platform that takes a raw CSV/Excel file and automatically performs data cleaning, exploratory analysis, visualization, machine learning, and business insight generation — with a natural-language chat interface layered on top.
+DataPilot Analytics is an AI-powered web app that takes any CSV or Excel file and automatically cleans it, explores it, visualizes it, trains machine learning models on it, and lets you ask questions about it in plain English, with no coding required.
 
-## Why this project
+🔗 **Live app:** [Open DataPilot Analytics](https://YOUR-APP-NAME.streamlit.app)
 
-Built to demonstrate the complete data workflow used by Data Analysts, Data Scientists, and AI/ML engineers:
+<!-- Add a screenshot: put an image in a "screenshots" folder and uncomment the line below -->
+<!-- ![DataPilot Analytics](screenshots/app.png) -->
+
+---
+
+## What it does
 
 ```
-Upload → Clean → Analyze → Visualize → Predict → Chat → Report
+Upload → Clean → Analyze → Visualize → Predict → Chat
 ```
 
-## Features (Version 1)
+| Tab | What you get |
+|---|---|
+| 🧹 **Clean data** | One-click cleaning of missing values, duplicates and outliers, with a before/after comparison |
+| 📈 **Dashboard** | KPIs, distribution charts, category breakdowns, correlation heatmap and automatic business insights |
+| 🔮 **Predict** | Train Regression or Classification models, compare them, and see which features matter most |
+| 💬 **Chat with data** | Ask questions about your dataset in natural language, powered by Google Gemini |
 
-- ✅ CSV / Excel upload
-- ✅ One-click automatic data cleaning (missing values, duplicates, outliers)
-- ✅ Before/after cleaning comparison
-- ✅ Exploratory dashboard: KPIs, distribution charts, category breakdowns, correlation heatmap
-- ✅ Rule-based AI business insights (no API cost — pure logic on your data)
-- ✅ Machine learning: regression or classification, with model comparison and feature importance
-- 🔜 Natural-language "Chat with data" (requires an LLM API key — see below)
+## Features
 
-## Quick start
+- Upload CSV or Excel files (`.csv`, `.xlsx`)
+- Automatic data profiling and cleaning
+  - Median imputation for numeric columns, mode for categorical columns
+  - Duplicate removal
+  - Outlier detection using the IQR method
+- Interactive Plotly charts
+- Rule-based business insights (fast, free, no API needed)
+- Machine learning with scikit-learn
+  - Regression: Linear Regression vs Random Forest (R², MAE)
+  - Classification: Logistic Regression vs Random Forest (Accuracy, Precision, Recall, F1)
+  - Feature importance chart and best-model selection
+- Natural-language chat grounded in your dataset's actual statistics
+
+## How to use it
+
+1. Open the app and upload a CSV or Excel file from the sidebar
+   (or try the included `sample_data/retail_sales_sample.csv`).
+2. Go to **Clean data** and click the cleaning button.
+3. Explore the **Dashboard** for charts and insights.
+4. In **Predict**, pick a task (regression or classification), choose a target column and click **Train models**.
+5. Use **Chat with data** to ask questions like *"Which category has the highest profit?"*
+
+## Tech stack
+
+Python · Streamlit · Pandas · NumPy · Scikit-learn · Plotly · Google Gemini API
+
+## Run it locally
 
 ```bash
-# 1. Clone and enter the project
-git clone <your-repo-url>
-cd datapilot-ai
+# 1. Clone the repository
+git clone https://github.com/rajjaiswal2057-ui/datapilot--analytics.git
+cd datapilot--analytics
 
 # 2. Install dependencies
 pip install -r requirements.txt
 
-# 3. Run the app
+# 3. (Optional) Enable "Chat with data"
+#    Create .streamlit/secrets.toml and add your free Gemini API key:
+#    GEMINI_API_KEY = "your-key-here"
+
+# 4. Run the app
 streamlit run app.py
 ```
 
-The app opens at `http://localhost:8501`. Upload `sample_data/retail_sales_sample.csv` to try it immediately.
+The app opens at `http://localhost:8501`.
 
-## Enabling "Chat with data"
-
-The chat tab expects an LLM API key. Create `.streamlit/secrets.toml`:
-
-```toml
-ANTHROPIC_API_KEY = "your-key-here"
-```
-
-Then wire up a call in `app.py`'s chat tab: pass the dataset's summary statistics + the user's question to the API, and display the response. Keep the prompt grounded strictly in your dataframe's actual numbers to avoid hallucinated answers.
+> Get a free Gemini API key at [Google AI Studio](https://aistudio.google.com/apikey).
+> Never commit your key. `.streamlit/secrets.toml` is already in `.gitignore`.
+> All other tabs work without any API key.
 
 ## Project structure
 
 ```
-datapilot-ai/
-├── app.py                  # Main Streamlit app
+datapilot--analytics/
+├── app.py                    # Main Streamlit app
 ├── requirements.txt
 ├── sample_data/
 │   └── retail_sales_sample.csv
 ├── utils/
-│   ├── data_cleaner.py     # Cleaning + profiling
-│   ├── eda.py               # Summary stats, correlation, column detection
-│   ├── ml_models.py         # Regression & classification training
-│   └── insights.py          # Rule-based business insight generation
+│   ├── data_cleaner.py       # Profiling and cleaning
+│   ├── eda.py                # Summary stats, correlations, column detection
+│   ├── ml_models.py          # Regression and classification training
+│   ├── insights.py           # Rule-based business insights
+│   ├── chat_engine.py        # Gemini-powered chat over the dataset
+│   └── dashboard_helpers.py  # Chart and KPI helpers
 └── .streamlit/
-    └── config.toml          # Theme (premium blue palette)
+    └── config.toml           # Theme
 ```
-
-## Tech stack
-
-Python · Streamlit · Pandas · NumPy · Scikit-learn · Plotly
 
 ## Deployment
 
-Push to GitHub, then deploy free on [Streamlit Community Cloud](https://streamlit.io/cloud) — point it at `app.py`.
+Deployed on [Streamlit Community Cloud](https://streamlit.io/cloud). To deploy your own copy, fork this repo, point Streamlit Cloud at `app.py`, and add `GEMINI_API_KEY` under **Settings → Secrets**.
 
-## Roadmap (Version 2)
+## Roadmap
 
 - SQL query workspace on uploaded data
-- PDF/Excel report export
+- PDF / Excel report export
 - Time-series forecasting
 - Anomaly detection
-- Light/dark mode toggle
-- Analysis history (SQLite persistence)
+- Light / dark mode toggle
+- Analysis history
 
-## Interview talking points
+## Author
 
-- **Cleaning:** median imputation for numeric, mode for categorical, IQR method for outlier detection
-- **ML:** compares Linear Regression vs Random Forest (or Logistic Regression vs Random Forest for classification), reports R²/MAE or Accuracy/Precision/Recall/F1, shows feature importance
-- **Insights:** rule-based logic keeps the dashboard fast and free — LLM is reserved only for the conversational layer
+**Raj Jaiswal**
+GitHub: [@rajjaiswal2057-ui](https://github.com/rajjaiswal2057-ui)
+
+If you find this project useful, please give it a ⭐
