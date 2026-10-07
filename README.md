@@ -1,10 +1,10 @@
-# 📊 DataPilot Analytics
+﻿# ðŸ“Š DataPilot Analytics
 
 **Transform raw data into actionable business intelligence.**
 
 DataPilot Analytics is an AI-powered web app that takes any CSV or Excel file and automatically cleans it, explores it, visualizes it, trains machine learning models on it, and lets you ask questions about it in plain English, with no coding required.
 
-🔗 **Live app:** [Open DataPilot Analytics](https://YOUR-APP-NAME.streamlit.app)
+ðŸ”— **Live app:** [Open DataPilot Analytics](https://datapilot-analyticsai.streamlit.app)
 
 <!-- Add a screenshot: put an image in a "screenshots" folder and uncomment the line below -->
 <!-- ![DataPilot Analytics](screenshots/app.png) -->
@@ -14,15 +14,15 @@ DataPilot Analytics is an AI-powered web app that takes any CSV or Excel file an
 ## What it does
 
 ```
-Upload → Clean → Analyze → Visualize → Predict → Chat
+Upload â†’ Clean â†’ Analyze â†’ Visualize â†’ Predict â†’ Chat
 ```
 
 | Tab | What you get |
 |---|---|
-| 🧹 **Clean data** | One-click cleaning of missing values, duplicates and outliers, with a before/after comparison |
-| 📈 **Dashboard** | KPIs, distribution charts, category breakdowns, correlation heatmap and automatic business insights |
-| 🔮 **Predict** | Train Regression or Classification models, compare them, and see which features matter most |
-| 💬 **Chat with data** | Ask questions about your dataset in natural language, powered by Google Gemini |
+| ðŸ§¹ **Clean data** | One-click cleaning of missing values, duplicates and outliers, with a before/after comparison |
+| ðŸ“ˆ **Dashboard** | KPIs, distribution charts, category breakdowns, correlation heatmap and automatic business insights |
+| ðŸ”® **Predict** | Train Regression or Classification models, compare them, and see which features matter most |
+| ðŸ’¬ **Chat with data** | Ask questions about your dataset in natural language, powered by Google Gemini |
 
 ## Features
 
@@ -34,7 +34,7 @@ Upload → Clean → Analyze → Visualize → Predict → Chat
 - Interactive Plotly charts
 - Rule-based business insights (fast, free, no API needed)
 - Machine learning with scikit-learn
-  - Regression: Linear Regression vs Random Forest (R², MAE)
+  - Regression: Linear Regression vs Random Forest (RÂ², MAE)
   - Classification: Logistic Regression vs Random Forest (Accuracy, Precision, Recall, F1)
   - Feature importance chart and best-model selection
 - Natural-language chat grounded in your dataset's actual statistics
@@ -50,7 +50,7 @@ Upload → Clean → Analyze → Visualize → Predict → Chat
 
 ## Tech stack
 
-Python · Streamlit · Pandas · NumPy · Scikit-learn · Plotly · Google Gemini API
+Python Â· Streamlit Â· Pandas Â· NumPy Â· Scikit-learn Â· Plotly Â· Google Gemini API
 
 ## Run it locally
 
@@ -80,24 +80,24 @@ The app opens at `http://localhost:8501`.
 
 ```
 datapilot--analytics/
-├── app.py                    # Main Streamlit app
-├── requirements.txt
-├── sample_data/
-│   └── retail_sales_sample.csv
-├── utils/
-│   ├── data_cleaner.py       # Profiling and cleaning
-│   ├── eda.py                # Summary stats, correlations, column detection
-│   ├── ml_models.py          # Regression and classification training
-│   ├── insights.py           # Rule-based business insights
-│   ├── chat_engine.py        # Gemini-powered chat over the dataset
-│   └── dashboard_helpers.py  # Chart and KPI helpers
-└── .streamlit/
-    └── config.toml           # Theme
+â”œâ”€â”€ app.py                    # Main Streamlit app
+â”œâ”€â”€ requirements.txt
+â”œâ”€â”€ sample_data/
+â”‚   â””â”€â”€ retail_sales_sample.csv
+â”œâ”€â”€ utils/
+â”‚   â”œâ”€â”€ data_cleaner.py       # Profiling and cleaning
+â”‚   â”œâ”€â”€ eda.py                # Summary stats, correlations, column detection
+â”‚   â”œâ”€â”€ ml_models.py          # Regression and classification training
+â”‚   â”œâ”€â”€ insights.py           # Rule-based business insights
+â”‚   â”œâ”€â”€ chat_engine.py        # Gemini-powered chat over the dataset
+â”‚   â””â”€â”€ dashboard_helpers.py  # Chart and KPI helpers
+â””â”€â”€ .streamlit/
+    â””â”€â”€ config.toml           # Theme
 ```
 
 ## Deployment
 
-Deployed on [Streamlit Community Cloud](https://streamlit.io/cloud). To deploy your own copy, fork this repo, point Streamlit Cloud at `app.py`, and add `GEMINI_API_KEY` under **Settings → Secrets**.
+Deployed on [Streamlit Community Cloud](https://streamlit.io/cloud). To deploy your own copy, fork this repo, point Streamlit Cloud at `app.py`, and add `GEMINI_API_KEY` under **Settings â†’ Secrets**.
 
 ## Roadmap
 
@@ -113,4 +113,4 @@ Deployed on [Streamlit Community Cloud](https://streamlit.io/cloud). To deploy y
 **Raj Jaiswal**
 GitHub: [@rajjaiswal2057-ui](https://github.com/rajjaiswal2057-ui)
 
-If you find this project useful, please give it a ⭐
+If you find this project useful, please give it a â­
